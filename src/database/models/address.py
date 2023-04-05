@@ -26,3 +26,6 @@ class AddressModel(Base):
     user: Mapped["UserModel"] = relationship(
         "UserModel", lazy="subquery", back_populates="list_address"
     )
+
+    def __str__(self):
+        return f'{self.number} {self.street}, {self.district}, {self.city}, {self.country}'

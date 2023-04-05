@@ -15,3 +15,6 @@ class RoleModel(Base):
     name: Mapped[str] = mapped_column(
         EnumColumn(RoleEnum), server_default=RoleEnum.CUSTOMER.value
     )
+
+    def __str__(self):
+        return self.name.value
